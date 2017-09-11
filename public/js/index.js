@@ -153,6 +153,7 @@ const About = {
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
+    { path: '/', component: Home },
     { path: '/home', component: Home },
     { path: '/about', component: About }
 ]
