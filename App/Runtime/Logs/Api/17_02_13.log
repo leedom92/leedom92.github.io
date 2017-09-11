@@ -1,0 +1,11 @@
+[ 2017-02-13T09:47:05+08:00 ] 127.0.0.1 /index.php/Api/Common/delete
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `bornkiss_user` [ RunTime:0.0319s ]
+SQL: SELECT * FROM `bornkiss_user` WHERE `id` = 59  [ RunTime:0.0009s ]
+SQL: DELETE FROM `bornkiss_user` WHERE `id` = 59 [ RunTime:0.0032s ]
+

@@ -1,0 +1,22 @@
+[ 2017-01-05T09:20:31+08:00 ] 127.0.0.1 /index.php/Api/Common/delete
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `bornkiss_user` [ RunTime:0.0343s ]
+SQL: SELECT * FROM `bornkiss_user` WHERE `id` = 53  [ RunTime:0.0013s ]
+SQL: DELETE FROM `bornkiss_user` WHERE `id` = 53 [ RunTime:0.0025s ]
+
+[ 2017-01-05T22:12:19+08:00 ] 127.0.0.1 /index.php/Api/Common/delete
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+SQL: SHOW COLUMNS FROM `bornkiss_user` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `bornkiss_user` WHERE `id` = 54  [ RunTime:0.0003s ]
+SQL: DELETE FROM `bornkiss_user` WHERE `id` = 54 [ RunTime:0.0002s ]
+

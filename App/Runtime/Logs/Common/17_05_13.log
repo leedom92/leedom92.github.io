@@ -1,0 +1,30 @@
+[ 2017-05-13T10:28:04+08:00 ] 127.0.0.1 /index.php/%7B%7Bx.imgUrl%7D%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000578s ]
+ERR: 无法加载模块:{{x
+
+[ 2017-05-13T10:28:23+08:00 ] 127.0.0.1 /index.php/%7B%7Bx.imgUrl%7D%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+ERR: 无法加载模块:{{x
+
+[ 2017-05-13T10:28:28+08:00 ] 127.0.0.1 /index.php/%7B%7Bx.thumbnail_pic_s%7D%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+ERR: 无法加载模块:{{x
+
+[ 2017-05-13T10:28:35+08:00 ] 127.0.0.1 /index.php/%7B%7Bx.imgUrl%7D%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001457s ]
+ERR: 无法加载模块:{{x
+
+[ 2017-05-13T14:42:01+08:00 ] 127.0.0.1 /%7B%7Bx.imgUrl%7D%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001164s ]
+ERR: 无法加载模块:{{x
+
