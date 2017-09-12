@@ -1,6 +1,6 @@
 @font-face {
     font-family: Sansation;
-    src: url('/Resource/font/Sansation/Sansation-Light.ttf');
+    src: url('../font/Sansation/Sansation-Light.ttf');
 }
 
 body{
@@ -94,6 +94,11 @@ div.col-xs-4{
 
 span.left,span.right{
     cursor: pointer;
+}
+
+div.img_box{
+    text-align: center;
+    padding: 40px;
 }
 
 
@@ -281,3 +286,10 @@ span.left,span.right{
 /*.toast-bottom-full-width {*/
     /*margin-bottom: 20px !important;*/
 /*}*/
+
+
+/* about */
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
