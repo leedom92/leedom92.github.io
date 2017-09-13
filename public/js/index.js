@@ -94,7 +94,7 @@ Vue.component('el-info',{
     },
 })
 
-Vue.component('nowtime',{
+Vue.component('el-time',{
     template: `<h1 class="text-center" style="padding-top:10rem;>
                     {{ getTime }}
                 </h1>`,
@@ -118,7 +118,7 @@ const Home = {
      }
 const About = { 
      template: `<div>
-                    <nowtime></nowtime> 
+                    <el-time></el-time> 
                 </div>` 
     
     }
