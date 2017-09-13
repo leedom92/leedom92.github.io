@@ -95,12 +95,12 @@ Vue.component('el-info',{
 })
 
 Vue.component('nowtime',{
-    template: `<h1>
+    template: `<h1 class="text-center">
                     {{ getTime }}
                 </h1>`,
     data: function(){
         return {
-            getTime: new Date().toLocaleDateString(),
+            getTime: new Date().toLocaleString(),
         }
     }
 })
