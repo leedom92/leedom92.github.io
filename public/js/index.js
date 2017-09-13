@@ -93,7 +93,7 @@ Vue.component('el-info',{
         
     },
     created:function(){
-        document.getElementsById('lee').style.color = 'red';
+        document.getElementById('lee').style.color = 'red';
     }
 })
 
