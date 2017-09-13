@@ -93,7 +93,7 @@ Vue.component('el-info',{
         
     },
     created:function(){
-        $('[data-toggle="popover"]').popover();
+        document.getElementsByClassName('info-btn').style.color= 'red';
     }
 })
 
