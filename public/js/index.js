@@ -105,11 +105,6 @@ Vue.component('nowtime',{
     },
     methods:{
         
-    },
-    created:function(){
-        setInterval(function(){
-            this.getTime = new Date().toLocaleString();
-        },1000)
     }
 })
 
