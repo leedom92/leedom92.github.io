@@ -128,8 +128,11 @@ const routes = [
         path: '/home', 
         component: Home,
         beforeEnter:function(){
-            console.log('leedom')
-            alert('welcome')
+            this.$message({
+                showClose: true,
+                message: "welcome to leedom's zone",
+                type: 'success'
+            })
         }
     },
     { 
