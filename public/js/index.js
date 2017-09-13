@@ -95,12 +95,19 @@ Vue.component('el-info',{
 })
 
 Vue.component('nowtime',{
-    template: `<h1 class="text-center">
+    template: `<h1 class="text-center" style="padding-top:10rem;>
                     {{ getTime }}
                 </h1>`,
     data: function(){
         return {
             getTime: new Date().toLocaleString(),
+        }
+    },
+    methods:{
+        changeTime:function(){
+            setInterval(function(){
+                this.getTime = new Date().toLocaleString();
+            },1000)
         }
     }
 })
