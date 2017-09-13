@@ -85,9 +85,9 @@ Vue.component('el-info',{
     methods:{
         
     },
-    created:function(){
+    beforeEnter:function(){
+        console.log('leedom')
         var a = document.getElementsByClassName('info-btn');
-        a.popover();
     }
 })
 
