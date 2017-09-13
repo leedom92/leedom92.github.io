@@ -106,7 +106,7 @@ Vue.component('el-time',{
     template:`<h1 class="text-center" style="padding-top:10rem;">
                     {{ getTime }}
             </h1>`,
-    beforeMount:function(){
+    created:function(){
         var that = this;
         setInterval(function(){
             that.getTime = new Date().toLocaleString();
