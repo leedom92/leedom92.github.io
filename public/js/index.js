@@ -129,8 +129,7 @@ const routes = [
         component: Home,
         beforeEnter:function(){
             console.log('leedom')
-            var a = document.getElementsByClassName('info-btn');
-            a.popover();
+            alert('welcome')
         }
     },
     { 
