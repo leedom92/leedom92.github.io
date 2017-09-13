@@ -48,6 +48,13 @@ Vue.component('el-header',{
             name: 'leedom',
             info: "My Chinese name is 蒋利栋. I'm an enthusiastic man who likes sports and literature."
         }
+    },
+    created:function(){
+        this.$message({
+            showClose: true,
+            message: "welcome to leedom's zone",
+            type: 'success'
+        })
     }
 })
 
@@ -128,11 +135,7 @@ const routes = [
         path: '/home', 
         component: Home,
         beforeEnter:function(){
-            this.$message({
-                showClose: true,
-                message: "welcome to leedom's zone",
-                type: 'success'
-            })
+            console.log('leedom');
         }
     },
     { 
