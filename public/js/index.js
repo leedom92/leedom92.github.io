@@ -104,11 +104,12 @@ Vue.component('nowtime',{
         }
     },
     methods:{
-        changeTime:function(){
-            setInterval(function(){
-                this.getTime = new Date().toLocaleString();
-            },1000)
-        }
+        
+    },
+    created:function(){
+        setInterval(function(){
+            this.getTime = new Date().toLocaleString();
+        },1000)
     }
 })
 
@@ -122,7 +123,7 @@ const Home = {
      }
 const About = { 
      template: `<div>
-                    <nowtime/></nowtime> 
+                    <nowtime></nowtime> 
                 </div>` 
     
     }
