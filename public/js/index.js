@@ -124,19 +124,11 @@ const About = {
 const routes = [
     { 
         path: '/', 
-        component: Home,
-        beforeEnter:function(){
-            console.log('leedom')
-            var a = document.getElementsByClassName('info-btn');
-            a.popover();
-        }
+        component: Home
     },
     { 
         path: '/home', 
-        component: Home,
-        beforeEnter:function(){
-            console.log('leedom');
-        }
+        component: Home
     },
     { 
         path: '/about', 
