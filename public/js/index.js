@@ -81,6 +81,15 @@ Vue.component('el-info',{
                 }
             ]
         }
+    },
+    methods:{
+        
+    },
+    created:function(){
+        console.log('leedom')
+    },
+    beforeCompile:function(){
+        console.log('bornkiss')
     }
 })
 
@@ -112,9 +121,18 @@ const About = {
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
-    { path: '/', component: Home },
-    { path: '/home', component: Home },
-    { path: '/about', component: About }
+    { 
+        path: '/', 
+        component: Home,
+    },
+    { 
+        path: '/home', 
+        component: Home 
+    },
+    { 
+        path: '/about', 
+        component: About 
+    }
 ]
 
 // 3. 创建 router 实例，然后传 `routes` 配置
