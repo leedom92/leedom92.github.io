@@ -93,7 +93,7 @@ Vue.component('el-info',{
         
     },
     created:function(){
-        document.getElementById('lee').style.color = 'red';
+        
     }
 })
 
@@ -113,7 +113,11 @@ Vue.component('el-time',{
         var that = this;
         setInterval(function(){
             that.getTime = new Date().toLocaleString();
-        },1000)
+        },1000);
+        taht.$message({
+            showClose: true,
+            message: "show the time",
+        })
     }
 })
 
