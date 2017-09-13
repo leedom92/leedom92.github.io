@@ -95,9 +95,6 @@ Vue.component('el-info',{
 })
 
 Vue.component('el-time',{
-    template: `<h1 class="text-center" style="padding-top:10rem;>
-                    {{ getTime }}
-                </h1>`,
     data: function(){
         return {
             getTime: new Date().toLocaleString(),
@@ -105,7 +102,10 @@ Vue.component('el-time',{
     },
     methods:{
         
-    }
+    },
+    template:`<h1 class="text-center" style="padding-top:10rem;">
+                    {{ getTime }}
+            </h1>`,
 })
 
 // 1. 定义（路由）组件。
