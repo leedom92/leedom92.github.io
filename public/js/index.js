@@ -106,6 +106,11 @@ Vue.component('el-time',{
     template:`<h1 class="text-center" style="padding-top:10rem;">
                     {{ getTime }}
             </h1>`,
+    beforeMount:function(){
+        setInterval(function(){
+            this.getTime = new Date().toLocaleString();
+        },1000)
+    }
 })
 
 // 1. 定义（路由）组件。
