@@ -107,8 +107,9 @@ Vue.component('el-time',{
                     {{ getTime }}
             </h1>`,
     beforeMount:function(){
+        var that = this;
         setInterval(function(){
-            this.getTime = new Date().toLocaleString();
+            that.getTime = new Date().toLocaleString();
         },1000)
     }
 })
