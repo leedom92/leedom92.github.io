@@ -93,7 +93,7 @@ Vue.component('el-info',{
         
     },
     created:function(){
-        document.getElementsByClassName('info-btn').style.color= 'red';
+        document.getElementsByTagName('a').style.color = 'red';
     }
 })
 
