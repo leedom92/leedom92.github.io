@@ -114,7 +114,7 @@ Vue.component('el-time',{
         setInterval(function(){
             that.getTime = new Date().toLocaleString();
         },1000);
-        taht.$message({
+        that.$message({
             showClose: true,
             message: "show the time",
         })
