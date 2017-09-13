@@ -86,8 +86,8 @@ Vue.component('el-info',{
         
     },
     created:function(){
-        // document.getElementsByClassName('info-btn').popover();
-        $('[data-toggle="popover"]').popover();
+        var a = document.getElementsByClassName('info-btn');
+        a.popover();
     }
 })
 
