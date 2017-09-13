@@ -94,11 +94,13 @@ Vue.component('el-info',{
     },
 })
 
-Vue.component('sidebar',{
-    template: ``,
+Vue.component('nowtime',{
+    template: `<h1>
+                    {{ getTime }}
+                </h1>`,
     data: function(){
         return {
-            isCollapse: true
+            getTime: new Date().toLocaleDateString(),
         }
     }
 })
@@ -112,7 +114,9 @@ const Home = {
                 </div>`,
      }
 const About = { 
-     template: `<div>leedom</div>` 
+     template: `<div>
+                    <nowtime/></nowtime> 
+                </div>` 
     
     }
 
