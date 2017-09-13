@@ -85,10 +85,6 @@ Vue.component('el-info',{
     methods:{
         
     },
-    beforeEnter:function(){
-        console.log('leedom')
-        var a = document.getElementsByClassName('info-btn');
-    }
 })
 
 Vue.component('sidebar',{
@@ -122,10 +118,20 @@ const routes = [
     { 
         path: '/', 
         component: Home,
+        beforeEnter:function(){
+            console.log('leedom')
+            var a = document.getElementsByClassName('info-btn');
+            a.popover();
+        }
     },
     { 
         path: '/home', 
-        component: Home 
+        component: Home,
+        beforeEnter:function(){
+            console.log('leedom')
+            var a = document.getElementsByClassName('info-btn');
+            a.popover();
+        }
     },
     { 
         path: '/about', 
