@@ -92,6 +92,9 @@ Vue.component('el-info',{
     methods:{
         
     },
+    created:function(){
+        $('[data-toggle="popover"]').popover();
+    }
 })
 
 Vue.component('el-time',{
