@@ -109,8 +109,10 @@ Vue.component('el-time',{
     },
     template:`<h1 class="text-center" style="padding-top:10rem;">
                     {{ getTime }}
-                    <p> {{ nowTime }} </p>
-            </h1>`,
+            </h1>
+            <h2> {{ nowTime }} </h2>
+            
+            `,
     created:function(){
         var that = this;
         setInterval(function(){
