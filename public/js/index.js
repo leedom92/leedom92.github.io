@@ -100,7 +100,7 @@ Vue.component('el-info',{
 Vue.component('el-time',{
     data: function(){
         return {
-            getTime: new Date().toLocaleString(),
+            getTime: new Date().toLocaleDateString(),
             nowTime: new Date().toLocaleTimeString()
         }
     },
@@ -114,7 +114,7 @@ Vue.component('el-time',{
     created:function(){
         var that = this;
         setInterval(function(){
-            that.getTime = new Date().toLocaleString();
+            that.nowTime = new Date().toLocaleTimeString()
         },1000);
         that.$message({
             showClose: true,
