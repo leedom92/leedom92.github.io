@@ -107,11 +107,12 @@ Vue.component('el-time',{
     methods:{
         
     },
-    template:`<h1 class="text-center" style="padding-top:10rem;">
+    template:`<div>
+            <h1 class="text-center" style="padding-top:10rem;">
                     {{ getTime }}
             </h1>
             <h2> {{ nowTime }} </h2>
-            
+            </div>
             `,
     created:function(){
         var that = this;
