@@ -101,7 +101,7 @@ Vue.component('el-time',{
     data: function(){
         return {
             getTime: new Date().toLocaleString(),
-            nowTime: new Date().toDateString()
+            nowTime: new Date().toLocaleTimeString()
         }
     },
     methods:{
