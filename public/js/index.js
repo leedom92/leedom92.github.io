@@ -107,8 +107,8 @@ Vue.component('el-time',{
     methods:{
         
     },
-    template:`<div>
-            <h1 class="text-center" style="padding-top:10rem;">
+    template:`<div class="text-center">
+            <h1 style="padding-top:10rem;">
                     {{ getTime }}
             </h1>
             <h2> {{ nowTime }} </h2>
