@@ -129,7 +129,7 @@ Vue.component('el-time',{
 Vue.component('el-entertainment',{
     data: function(){
         return {
-            entertainMsg = []
+            entertainMsg: []
         }
     },
     methods:{
@@ -158,13 +158,15 @@ Vue.component('el-entertainment',{
         var that = this;
         axios.get('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10').then(function(res){
             console.log(res);
+            that.$message({
+                showClose: true,
+                message: "show the entertainment",
+                type: 'success'
+            })
             var info = res.data.data;
             this.entertainMsg = info;
         })
-        // that.$message({
-        //     showClose: true,
-        //     message: "show the time",
-        // })
+        
     }
 })
 
