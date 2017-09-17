@@ -163,7 +163,7 @@ Vue.component('el-entertainment',{
                 message: "show the entertainment",
                 type: 'success'
             })
-            var info = res.data.data;
+            var info = res.data;
             this.entertainMsg = info;
         })
         
