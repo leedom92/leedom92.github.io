@@ -126,6 +126,47 @@ Vue.component('el-time',{
     }
 })
 
+Vue.component('el-entertainment',{
+    data: function(){
+        return {
+            
+        }
+    },
+    methods:{
+        
+    },
+    template:`
+    <div class="mediaBox">
+        <div class="row rowStyle">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="media" ng-repeat="x in data">
+                    <div class="media-left">
+                        <a href="#">
+                            <img src="{{x.thumbnail_pic_s}}" alt="{{x.title}}" class="media-object">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4>{{x.author_name}}</h4>
+                        <p>{{x.title}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            `,
+    created:function(){
+        var that = this;
+        axios.get('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10').then(function(res){
+            console.log(res);
+            var info = res.data;
+        })
+        // that.$message({
+        //     showClose: true,
+        //     message: "show the time",
+        // })
+    }
+})
+
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
 const Home = {
@@ -144,7 +185,7 @@ const About = {
     
 const Entertainment = { 
      template: `<div>
-                     leedom
+                    <el-entertainment></el-entertainment>
                 </div>` 
     
     }
