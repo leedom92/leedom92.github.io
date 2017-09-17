@@ -142,7 +142,7 @@ Vue.component('el-entertainment',{
                 <div class="media" v-for="item in entertainMsg">
                     <div class="media-left">
                         <a href="#">
-                            <img src="{{item.thumbnail_pic_s}}" alt="{{item.title}}" class="media-object">
+                            <img :src="item.thumbnail_pic_s" :alt="item.title" class="media-object">
                         </a>
                     </div>
                     <div class="media-body">
