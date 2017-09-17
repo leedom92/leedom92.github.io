@@ -129,7 +129,7 @@ Vue.component('el-time',{
 Vue.component('el-entertainment',{
     data: function(){
         return {
-            
+            entertainMsg = []
         }
     },
     methods:{
@@ -139,15 +139,15 @@ Vue.component('el-entertainment',{
     <div class="mediaBox">
         <div class="row rowStyle">
             <div class="col-md-8 col-md-offset-2">
-                <div class="media" ng-repeat="x in data">
+                <div class="media" v-for="item in entertainMsg">
                     <div class="media-left">
                         <a href="#">
-                            <img src="{{x.thumbnail_pic_s}}" alt="{{x.title}}" class="media-object">
+                            <img src="{{item.thumbnail_pic_s}}" alt="{{item.title}}" class="media-object">
                         </a>
                     </div>
                     <div class="media-body">
-                        <h4>{{x.author_name}}</h4>
-                        <p>{{x.title}}</p>
+                        <h4>{{item.author_name}}</h4>
+                        <p>{{item.title}}</p>
                     </div>
                 </div>
             </div>
@@ -158,7 +158,8 @@ Vue.component('el-entertainment',{
         var that = this;
         axios.get('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10').then(function(res){
             console.log(res);
-            var info = res.data;
+            var info = res.data.data;
+            this.entertainMsg = info;
         })
         // that.$message({
         //     showClose: true,
