@@ -21,7 +21,7 @@ Vue.component('el-nav',{
                                     '<li><a href="#">Connection</a></li>'+
                                     '<li><a>Experience</a></li>'+
                                     '<li class="divider"></li>'+
-                                    '<li><a>Entertainment</a></li>'+
+                                    '<li><router-link to="/entertainment">Entertainment</router-link></li>'+
                                 '</ul>'+
                             '</li>'+
                         '</ul>'+
@@ -134,9 +134,17 @@ const Home = {
                     <el-info></el-info>
                 </div>`,
      }
+    
 const About = { 
      template: `<div>
                     <el-time></el-time> 
+                </div>` 
+    
+    }
+    
+const Entertainment = { 
+     template: `<div>
+                     leedom
                 </div>` 
     
     }
@@ -158,6 +166,10 @@ const routes = [
     { 
         path: '/about', 
         component: About 
+    },
+    { 
+        path: '/entertainment', 
+        component: Entertainment 
     }
 ]
 
