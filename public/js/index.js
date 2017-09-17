@@ -139,7 +139,7 @@ Vue.component('el-entertainment',{
     <div class="mediaBox">
         <div class="row rowStyle">
             <div class="col-md-8 col-md-offset-2">
-                <div class="media" v-for="item in entertainMsg">
+                <div class="media" v-for="(item,index) in entertainMsg" :key="index">
                     <div class="media-left">
                         <a href="#">
                             <img :src="item.thumbnail_pic_s" :alt="item.title" class="media-object">
@@ -164,7 +164,7 @@ Vue.component('el-entertainment',{
                 type: 'success'
             })
             var info = res.data;
-            this.entertainMsg = info;
+            that.entertainMsg = info;
         })
         
     }
