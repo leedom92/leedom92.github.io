@@ -49,7 +49,7 @@ Vue.component('el-header',{
             info: "My Chinese name is 蒋利栋. I'm an enthusiastic man who likes sports and literature."
         }
     },
-    activated:function(){
+    beforeUpdate:function(){
         this.$message({
             showClose: true,
             message: "welcome to leedom's zone",
