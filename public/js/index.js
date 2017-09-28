@@ -1,5 +1,10 @@
 //nav 组件
 Vue.component('el-nav',{
+    data: function () {
+        return {
+            isActive:false
+        }
+    },
     template: `<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
@@ -11,7 +16,7 @@ Vue.component('el-nav',{
                         </button>
                         <a class="navbar-brand" href="#">JLD</a>
                     </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="collapse navbar-collapse" :class="{ in:isActive }" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li><router-link to="/home">home</router-link></li>
                             <li><router-link to="/about">about</router-link></li>
