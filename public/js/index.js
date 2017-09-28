@@ -6,12 +6,7 @@ Vue.component('el-nav',{
         }
     },
     methods:{
-        returnFalse:function(){
-            $('#collapse').addClass("collapsed");  
-            $('#collapse').attr("aria-expanded",false);  
-            $("#navbar").removeClass("in");  
-            $("#navbar").attr("aria-expanded",false);  
-
+        returnFalse:function(){ 
             document.getElementById('collapseBtn').setAttribute("class","collapsed");
             document.getElementById('collapseBtn').setAttribute("aria-expanded",false);
             document.getElementById('bs-example-navbar-collapse-1').removeAttribute("class");
