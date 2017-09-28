@@ -7,7 +7,15 @@ Vue.component('el-nav',{
     },
     methods:{
         returnFalse:function(){
-            document.getElementById('collapseBtn').onclick();
+            $('#collapse').addClass("collapsed");  
+            $('#collapse').attr("aria-expanded",false);  
+            $("#navbar").removeClass("in");  
+            $("#navbar").attr("aria-expanded",false);  
+
+            document.getElementById('collapseBtn').setAttribute("class","collapsed");
+            document.getElementById('collapseBtn').setAttribute("aria-expanded",false);
+            document.getElementById('bs-example-navbar-collapse-1').removeAttribute("class");
+            document.getElementById('bs-example-navbar-collapse-1').setAttribute("aria-expanded",false);
         }
     },
     template: `<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
