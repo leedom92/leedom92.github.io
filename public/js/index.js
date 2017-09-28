@@ -2,16 +2,11 @@
 Vue.component('el-nav',{
     data: function () {
         return {
-            isActive:false
+            
         }
     },
     methods:{
-        returnFalse:function(){ 
-            document.getElementById('collapseBtn').setAttribute("class","collapsed");
-            document.getElementById('collapseBtn').setAttribute("aria-expanded",false);
-            document.getElementById('bs-example-navbar-collapse-1').removeAttribute("class");
-            document.getElementById('bs-example-navbar-collapse-1').setAttribute("aria-expanded",false);
-        }
+
     },
     template: `<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
@@ -26,15 +21,15 @@ Vue.component('el-nav',{
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li @click="returnFalse"><router-link to="/home">home</router-link></li>
-                            <li @click="returnFalse"><router-link to="/about">about</router-link></li>
+                            <li><router-link to="/home">home</router-link></li>
+                            <li><router-link to="/about">about</router-link></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">More</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#" @click="returnFalse">Connection</a></li>
-                                    <li><a @click="returnFalse">Experience</a></li>
+                                    <li><a href="#">Connection</a></li>
+                                    <li><a>Experience</a></li>
                                     <li class="divider"></li>
-                                    <li @click="returnFalse"><router-link to="/entertainment">Entertainment</router-link></li>
+                                    <li><router-link to="/entertainment">Entertainment</router-link></li>
                                 </ul>
                             </li>
                         </ul>
