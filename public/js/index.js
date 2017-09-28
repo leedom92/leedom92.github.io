@@ -44,7 +44,7 @@ Vue.component('el-header',{
             </header>`,
     data: function(){
         return {
-            avatar:'public/img/avatar2.jpg',
+            avatar:'public/img/avatar3.jpg',
             name: 'leedom',
             info: "My Chinese name is 蒋利栋. I'm an enthusiastic man who likes sports and literature."
         }
