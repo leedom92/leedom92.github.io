@@ -7,13 +7,13 @@ Vue.component('el-nav',{
     },
     methods:{
         returnFalse:function(){
-            this.isActive = false
+            document.getElementById('collapseBtn').onclick();
         }
     },
     template: `<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <button id="collapseBtn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -21,7 +21,7 @@ Vue.component('el-nav',{
                         </button>
                         <a class="navbar-brand" href="#">JLD</a>
                     </div>
-                    <div class="collapse navbar-collapse" :class="{ in:isActive }" id="bs-example-navbar-collapse-1">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li><router-link to="/home" @click="returnFalse">home</router-link></li>
                             <li><router-link to="/about" @click="returnFalse">about</router-link></li>
