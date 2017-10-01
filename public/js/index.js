@@ -74,10 +74,10 @@ Vue.component('el-info',{
             <p>{{ item.getName }}</p>
             <el-popover
                 :ref="item.popWay"
-                placement="top-start"
+                :placement="top-start"
                 :title="item.getName"
-                width="200"
-                trigger="click"
+                :width="200"
+                :trigger="click"
                 :content="item.content">
             </el-popover>
             <el-button v-popover:item.popWay>click</el-button>
