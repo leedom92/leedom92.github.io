@@ -72,7 +72,15 @@ Vue.component('el-info',{
         <div class="col-xs-4 img_box" v-for="item in getInfo">
             <img :src="item.getImg" class="center-block" alt="">
             <p>{{ item.getName }}</p>
-            <a role="button" tabindex="0" data-toggle="popover" data-placement="top" data-trigger="focus" :data-original-title="item.getName" :title="item.getName" :data-content="item.content" class="btn btn-default info-btn">click me</a>
+            <el-popover
+                ref="item.popWay"
+                placement="top-start"
+                title="item.getName"
+                width="200"
+                trigger="click"
+                content="item.content">
+            </el-popover>
+            <el-button v-popover:item.popWay>click</el-button>
         </div>
     </div>
 </div>`,
@@ -80,16 +88,19 @@ Vue.component('el-info',{
         return {
             getInfo:[
                 {
+                    popWay: 'popoverAngular',
                     getImg: 'public/img/angular.jpg',
                     getName: 'angularjs',
                     content:"AngularJS是为了克服HTML在构建应用上的不足而设计的。"
                 },
                 {
+                    popWay: 'popoverVue',
                     getImg: 'public/img/vue.jpg',
                     getName: 'vue.js',
                     content:"Vue.js是一个构建数据驱动的 web 界面的渐进式框架。"
                 },
                 {
+                    popWay: 'popoverJquery',
                     getImg: 'public/img/jquery.jpg',
                     getName: 'jquery',
                     content:"jQuery是一个快速、简洁的JavaScript框架，是一个优秀的JavaScript代码库。"
