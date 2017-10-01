@@ -72,15 +72,7 @@ Vue.component('el-info',{
         <div class="col-xs-4 img_box" v-for="item in getInfo">
             <img :src="item.getImg" class="center-block" alt="">
             <p>{{ item.getName }}</p>
-            // <el-popover
-            //     :ref="item.popWay"
-            //     :placement="top-start"
-            //     :title="item.getName"
-            //     :width="200"
-            //     :trigger="click"
-            //     :content="item.content">
-            // </el-popover>
-            // <el-button v-popover:item.popWay>click</el-button>
+            <a role="button" tabindex="0" data-toggle="popover" data-placement="top" data-trigger="focus" :data-original-title="item.getName" :title="item.getName" :data-content="item.content" class="btn btn-default info-btn">click me</a>
         </div>
     </div>
 </div>`,
