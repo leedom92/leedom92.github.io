@@ -80,7 +80,7 @@ Vue.component('el-info',{
                 trigger="click"
                 content="item.content">
             </el-popover>
-            <el-button v-popover:item.popWay>click</el-button>
+            <el-button v-popover:{{item.popWay}}>click</el-button>
         </div>
     </div>
 </div>`,
