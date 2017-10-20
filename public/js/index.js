@@ -127,7 +127,7 @@ Vue.component('el-time',{
             <h2> {{ nowTime }} </h2>
             
             <div>
-                <span v-for="item in getImg">
+                // <span v-for="item in getImg">
                     <img :src="item.image" />
                 </span>
             </div>
@@ -143,8 +143,8 @@ Vue.component('el-time',{
             message: "show the time",
         });
         axios.get('http://v.wx91go.com/index.php?g=Api&m=Hotel&a=index').then(res=>{
-            var info = JSON.parse(res);
-            console.log(info);
+            // var info = JSON.parse(res);
+            console.log(res);
             this.getImg = info.banner_list;
         })
     }
