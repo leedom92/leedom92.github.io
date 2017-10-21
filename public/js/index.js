@@ -149,7 +149,7 @@ Vue.component('el-time',{
 
         axios.get('http://v.wx91go.com/index.php?g=Api&m=Hotel&a=index').then(function(res){
             console.log(res);
-            that.getImg = info.banner_list;
+            that.getImg = res.data.banner_list;
             
         })
     }
