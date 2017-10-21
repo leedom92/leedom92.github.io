@@ -142,11 +142,10 @@ Vue.component('el-time',{
             showClose: true,
             message: "show the time",
         });
-        axios.get('http://v.wx91go.com/index.php?g=Api&m=Hotel&a=index').then(res=>{
-            // var info = JSON.parse(res);
-            console.log(res);
-            this.getImg = info.banner_list;
-        })
+        // axios.get('http://v.wx91go.com/index.php?g=Api&m=Hotel&a=index').then(res=>{
+        //     console.log(res);
+        //     this.getImg = info.banner_list;
+        // })
 
         axios.get('http://v.wx91go.com/index.php?g=Api&m=Hotel&a=index').then(function(res){
             console.log(res);
