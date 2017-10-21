@@ -127,7 +127,7 @@ Vue.component('el-time',{
             <h2> {{ nowTime }} </h2>
             
             <div>
-                // <span v-for="item in getImg">
+                 <span v-for="item in getImg">
                     <img :src="item.image" />
                 </span>
             </div>
