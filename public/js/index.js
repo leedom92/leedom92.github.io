@@ -114,7 +114,6 @@ Vue.component('el-time',{
         return {
             getTime: new Date().toLocaleDateString(),
             nowTime: new Date().toLocaleTimeString(),
-            getImg: ''
         }
     },
     methods:{
@@ -125,12 +124,6 @@ Vue.component('el-time',{
                     {{ getTime }}
             </h1>
             <h2> {{ nowTime }} </h2>
-            
-            <div>
-                 <span v-for="item in getImg">
-                    <img :src="item.image" />
-                </span>
-            </div>
             </div>
             `,
     created:function(){
@@ -147,11 +140,11 @@ Vue.component('el-time',{
         //     this.getImg = info.banner_list;
         // })
 
-        axios.get('http://v.wx91go.com/index.php?g=Api&m=Hotel&a=index').then(function(res){
-            console.log(res);
-            that.getImg = res.data.banner_list;
+        // axios.get('http://v.wx91go.com/index.php?g=Api&m=Hotel&a=index').then(function(res){
+        //     console.log(res);
+        //     that.getImg = res.data.banner_list;
             
-        })
+        // })
     }
 })
 
