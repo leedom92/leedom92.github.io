@@ -113,8 +113,7 @@ Vue.component('el-time',{
     data: function(){
         return {
             getTime: new Date().toLocaleDateString(),
-            nowTime: new Date(),
-            // nowTime: new Date().toLocaleTimeString(),
+            nowTime: new Date().toLocaleTimeString(),
         }
     },
     methods:{
@@ -124,7 +123,7 @@ Vue.component('el-time',{
             <h1 style="padding-top:10rem;">
                     {{ getTime }}
             </h1>
-            <h2> {{ nowTime | timeFunc }} </h2>
+            <h2> {{ nowTime }} </h2>
             </div>
             `,
     created:function(){
