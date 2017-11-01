@@ -123,7 +123,7 @@ Vue.component('el-time',{
             <h1 style="padding-top:10rem;">
                     {{ getTime }}
             </h1>
-            <h2> {{ nowTime }} </h2>
+            <h2> {{ nowTime | timeFunc }} </h2>
             </div>
             `,
     created:function(){
