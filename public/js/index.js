@@ -158,7 +158,29 @@ Vue.component('el-entertainment',{
         }
     },
     methods:{
-        
+        moreFn: function (itemIndex) {
+            var that = this;
+            axios.get(this.url+this.nowCount).then(function(res){
+                console.log(res);
+                that.$message({
+                    showClose: true,
+                    message: "show the entertainment",
+                    type: 'success'
+                })
+                var info = res.data;
+                that.entertainMsg = info;
+                that.switchShow=!that.switchShow;
+            })
+            
+        },
+        getMore: function () {
+            this.switchShow=!this.switchShow;
+            this.nowCount = this.nowCount+5;
+            this.moreFn(this.nowCount);
+        },
+        init: function () {
+            this.moreFn(this.nowCount);
+        }
     },
     template:`
     <div class="mediaBox">
@@ -197,31 +219,6 @@ Vue.component('el-entertainment',{
         // })
         this.init();
         
-    },
-    methods:{
-        moreFn: function (itemIndex) {
-            var that = this;
-            axios.get(this.url+this.nowCount).then(function(res){
-                console.log(res);
-                that.$message({
-                    showClose: true,
-                    message: "show the entertainment",
-                    type: 'success'
-                })
-                var info = res.data;
-                that.entertainMsg = info;
-                that.switchShow=!that.switchShow;
-            })
-            
-        },
-        getMore: function () {
-            this.switchShow=!this.switchShow;
-            this.nowCount = this.nowCount+5;
-            this.moreFn(this.nowCount);
-        },
-        init: function () {
-            this.moreFn(this.nowCount);
-        }
     }
 })
 
