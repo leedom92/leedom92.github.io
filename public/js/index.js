@@ -179,7 +179,7 @@ Vue.component('el-entertainment',{
             this.moreFn(this.nowCount);
         },
         init: function () {
-            // this.moreFn(this.nowCount);
+            this.moreFn(this.nowCount);
         }
     },
     template:`
@@ -217,18 +217,21 @@ Vue.component('el-entertainment',{
         //     var info = res.data;
         //     that.entertainMsg = info;
         // })
-        var that = this;
-        axios.get('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10').then(function(res){
-            console.log(res);
-            that.$message({
-                showClose: true,
-                message: "show the entertainment",
-                type: 'success'
-            })
-            var info = res.data;
-            that.entertainMsg = info;
-            that.switchShow=!that.switchShow;
-        })
+        // var that = this;
+        // axios.get('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10').then(function(res){
+        //     console.log(res);
+        //     that.$message({
+        //         showClose: true,
+        //         message: "show the entertainment",
+        //         type: 'success'
+        //     })
+        //     var info = res.data;
+        //     that.entertainMsg = info;
+        //     that.switchShow=!that.switchShow;
+        // })
+
+        this.init();
+
         
     }
 })
