@@ -72,7 +72,6 @@ Vue.component('el-info',{
         <div class="col-xs-4 img_box" v-for="item in getInfo">
             <img :src="item.getImg" class="center-block img-responsive" alt="">
             <p>{{ item.getName }}</p>
-            <a role="button" tabindex="0" data-toggle="popover" data-placement="top" data-trigger="focus" :data-original-title="item.getName" :title="item.getName" :data-content="item.content" class="btn btn-default info-btn">click me</a>
         </div>
     </div>
 </div>`,
