@@ -217,7 +217,18 @@ Vue.component('el-entertainment',{
         //     var info = res.data;
         //     that.entertainMsg = info;
         // })
-        this.moreFn(this.nowCount);
+        var that = this;
+        axios.get(this.url+this.nowCount).then(function(res){
+            console.log(res);
+            that.$message({
+                showClose: true,
+                message: "show the entertainment",
+                type: 'success'
+            })
+            var info = res.data;
+            that.entertainMsg = info;
+            that.switchShow=!that.switchShow;
+        })
         
     }
 })
