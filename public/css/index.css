@@ -191,9 +191,9 @@ div.img_box{
     div.img_box img{
         width: 100px;
     }
-    div.col-xs-4{
+    /* div.col-xs-4{
         width:100%;
-    }
+    } */
     div.img_box p{
         font-size:16px;
     }
