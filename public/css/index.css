@@ -294,3 +294,7 @@ div.img_box{
     min-height: 400px;
   }
 
+.get-more,.loading{
+    text-align: center;
+    margin-top: 5px;
+}
