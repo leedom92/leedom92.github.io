@@ -195,7 +195,7 @@ Vue.component('el-entertainment',{
         //     var info = res.data;
         //     that.entertainMsg = info;
         // })
-        this.init()
+        this.init();
         
     },
     methods:{
@@ -217,10 +217,10 @@ Vue.component('el-entertainment',{
         getMore: function () {
             this.switchShow=!this.switchShow;
             this.nowCount = this.nowCount+5;
-            this.moreFn(this.nowPage);
+            this.moreFn(this.nowCount);
         },
         init: function () {
-            this.moreFn(this.nowPage);
+            this.moreFn(this.nowCount);
         }
     }
 })
