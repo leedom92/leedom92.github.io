@@ -218,7 +218,7 @@ Vue.component('el-entertainment',{
         //     that.entertainMsg = info;
         // })
         var that = this;
-        axios.get('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count='+this.nowCount).then(function(res){
+        axios.get('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10').then(function(res){
             console.log(res);
             that.$message({
                 showClose: true,
