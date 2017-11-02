@@ -151,7 +151,10 @@ Vue.component('el-time',{
 Vue.component('el-entertainment',{
     data: function(){
         return {
-            entertainMsg: []
+            entertainMsg: [],
+            url: 'http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=',
+            nowCount: 5,
+            switchShow:false,
         }
     },
     methods:{
@@ -173,22 +176,52 @@ Vue.component('el-entertainment',{
                     </div>
                 </div>
             </div>
+            <div>
+                <p class="get-more" v-on:click="getMore()" v-show="switchShow">点击加载更多</p>
+                <p class="loading" v-show="!switchShow">加载中...</p>
+            </div>
         </div>
     </div>
             `,
     created:function(){
-        var that = this;
-        axios.get('http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=10').then(function(res){
-            console.log(res);
-            that.$message({
-                showClose: true,
-                message: "show the entertainment",
-                type: 'success'
-            })
-            var info = res.data;
-            that.entertainMsg = info;
-        })
+        // var that = this;
+        // axios.get(this.url+this.nowCount).then(function(res){
+        //     console.log(res);
+        //     that.$message({
+        //         showClose: true,
+        //         message: "show the entertainment",
+        //         type: 'success'
+        //     })
+        //     var info = res.data;
+        //     that.entertainMsg = info;
+        // })
+        this.init()
         
+    },
+    methods:{
+        moreFn: function (itemIndex) {
+            var that = this;
+            axios.get(this.url+this.nowCount).then(function(res){
+                console.log(res);
+                that.$message({
+                    showClose: true,
+                    message: "show the entertainment",
+                    type: 'success'
+                })
+                var info = res.data;
+                that.entertainMsg = info;
+                that.switchShow=!that.switchShow;
+            })
+            
+        },
+        getMore: function () {
+            this.switchShow=!this.switchShow;
+            this.nowCount = this.nowCount+5;
+            this.moreFn(this.nowPage);
+        },
+        init: function () {
+            this.moreFn(this.nowPage);
+        }
     }
 })
 
