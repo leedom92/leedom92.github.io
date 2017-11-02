@@ -179,7 +179,7 @@ Vue.component('el-entertainment',{
             this.moreFn(this.nowCount);
         },
         init: function () {
-            this.moreFn(this.nowCount);
+            // this.moreFn(this.nowCount);
         }
     },
     template:`
@@ -217,7 +217,7 @@ Vue.component('el-entertainment',{
         //     var info = res.data;
         //     that.entertainMsg = info;
         // })
-        this.init();
+        this.moreFn(this.nowCount);
         
     }
 })
