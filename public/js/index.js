@@ -202,7 +202,7 @@ Vue.component('el-entertainment',{
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="col-xs-12">
                 <p class="get-more" v-on:click="getMore()" v-show="switchShow">点击加载更多</p>
                 <p class="loading" v-show="!switchShow">加载中...</p>
             </div>
