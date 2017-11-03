@@ -192,7 +192,7 @@ Vue.component('el-entertainment',{
             <div class="col-md-8 col-md-offset-2">
                 <div class="media" v-for="(item,index) in entertainMsg" :key="index">
                     <div class="media-left">
-                        <a href="#">
+                        <a href="javascript:;">
                             <img :src="item.thumbnail_pic_s" :alt="item.title" class="media-object">
                         </a>
                     </div>
