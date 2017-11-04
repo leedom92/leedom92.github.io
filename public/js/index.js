@@ -24,10 +24,10 @@ Vue.component('el-nav',{
                             <li><router-link to="/home">home</router-link></li>
                             <li><router-link to="/about">about</router-link></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">More</a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">more</a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#">Connection</a></li>
-                                    <li><a>Experience</a></li>
+                                    <li><router-link to="/experience">experience</router-link></li>
                                     <li class="divider"></li>
                                     <li><router-link to="/entertainment">Entertainment</router-link></li>
                                 </ul>
@@ -228,6 +228,54 @@ Vue.component('el-entertainment',{
     }
 })
 
+Vue.component('el-experience',{
+    data:function(){
+        return {
+            imgUrl: '',
+            question: '',
+            answer: '请问问题'
+        }
+    },
+    methods:{
+        getAnswer: 
+            function () {
+                if (this.question.indexOf('?') === -1) {
+                    this.answer = '问题通常都有一个标点符号 :-)'
+                    return
+                }
+                this.answer = '思考中...'
+                var vm = this
+                axios.get('https://yesno.wtf/api')
+                .then(function (response) {
+                    console.log(response)
+                    // vm.answer = _.capitalize(response.data.answer);
+                    vm.answer = response.data.answer;
+                    vm.imgUrl = response.data.image;
+                })
+                .catch(function (error) {
+                    vm.answer = '错误! 无法使用该API. ' + error
+                })
+            }
+    },
+    watch: {
+        question : function(newQuestion){
+            this.answer = '直到停止输入，开始回答问题...'
+            this.getAnswer()
+        }
+    },
+    template:`
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-md-offset-3">
+                <div class="info-box">
+                    <label>输入问题</label>
+                    <input class="form-control" v-model="question"></input>
+                    <p>{{ answer }}</p>
+                </div>
+            </div>
+        </div>
+    `
+})
+
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
 const Home = {
@@ -247,6 +295,13 @@ const About = {
 const Entertainment = { 
      template: `<div>
                     <el-entertainment></el-entertainment>
+                </div>` 
+    
+    }
+    
+const Experience = { 
+     template: `<div>
+                    <el-experience></el-experience>
                 </div>` 
     
     }
