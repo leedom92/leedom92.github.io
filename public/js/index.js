@@ -239,7 +239,7 @@ Vue.component('el-experience',{
     methods:{
         getAnswer: 
             function () {
-                if (this.question.indexOf('?') === -1 || this.question.indexOf('？') === -1) {
+                if (this.question.indexOf('?') === -1 && this.question.indexOf('？') === -1) {
                     this.answer = '问题通常都有一个标点符号 :-)'
                     return
                 }
