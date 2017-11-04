@@ -264,12 +264,12 @@ Vue.component('el-experience',{
         }
     },
     template:`
-        <div class="row" style="margin-top:1rem;">
-            <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+        <div class="row" style="margin-top:20rem;">
+            <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
                 <div class="info-box">
                     <div class="row">
-                        <label class="col-xs-3">输入问题</label>
-                        <div class="col-xs-9">
+                        <label class="form-label col-xs-4">输入问题:</label>
+                        <div class="col-xs-8">
                             <input class="form-control" v-model="question"></input>
                         </div>
                     </div>
