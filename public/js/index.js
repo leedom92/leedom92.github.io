@@ -267,12 +267,8 @@ Vue.component('el-experience',{
         <div class="row" style="margin-top:20rem;">
             <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
                 <div class="info-box">
-                    <div class="row">
-                        <label class="form-label col-xs-4">输入问题:</label>
-                        <div class="col-xs-8">
-                            <input class="form-control" v-model="question"></input>
-                        </div>
-                    </div>
+                    <h2 class="text-center">输入问题:</h2>
+                    <p><input class="form-control" v-model="question"></input></p>
                     <p class="text-center">{{ answer }}</p>
                     <p><img class="img-responsive" :src="imgUrl"/></p>
                 </div>
