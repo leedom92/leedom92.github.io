@@ -265,11 +265,12 @@ Vue.component('el-experience',{
     },
     template:`
         <div class="row">
-            <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
                 <div class="info-box">
                     <label>输入问题</label>
                     <input class="form-control" v-model="question"></input>
                     <p>{{ answer }}</p>
+                    <p><img :src="imgUrl"/></p>
                 </div>
             </div>
         </div>
