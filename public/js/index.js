@@ -327,6 +327,10 @@ const routes = [
     { 
         path: '/entertainment', 
         component: Entertainment 
+    },
+    { 
+        path: '/experience', 
+        component: Experience 
     }
 ]
 
