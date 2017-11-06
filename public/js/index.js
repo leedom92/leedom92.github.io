@@ -26,10 +26,10 @@ Vue.component('el-nav',{
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">more</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Connection</a></li>
+                                    <li><a href="#">connection</a></li>
                                     <li><router-link to="/experience">experience</router-link></li>
                                     <li class="divider"></li>
-                                    <li><router-link to="/entertainment">Entertainment</router-link></li>
+                                    <li><router-link to="/entertainment">entertainment</router-link></li>
                                 </ul>
                             </li>
                         </ul>
@@ -262,6 +262,13 @@ Vue.component('el-experience',{
             this.answer = '直到停止输入，开始回答问题...'
             this.getAnswer()
         }
+    },
+    created:function(){
+            this.$message({
+                showClose: true,
+                message: "please ask a question",
+                type: 'warning'
+            })
     },
     template:`
         <div class="row" style="margin-top:10rem;">
