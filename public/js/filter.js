@@ -7,7 +7,7 @@ Vue.filter('judge',function(val){
         return '是'
     }else if(val == 'no'){
         return '否'
+    }else{
+        return val 
     }
-    return val 
-
 })
