@@ -5,6 +5,9 @@ Vue.filter('timeFunc',function(val){
 Vue.filter('judge',function(val){
     if(val == 'yes'){
         return '是'
+    }else if(val == 'no'){
+        return '否'
     }
-    return '否' 
+    return val 
+
 })

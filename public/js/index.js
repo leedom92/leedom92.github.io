@@ -276,7 +276,7 @@ Vue.component('el-experience',{
                 <div class="info-box">
                     <h2 class="text-center">输入问题:</h2>
                     <p><input class="form-control" v-model="question"></input></p>
-                    <p class="text-center">{{ answer }}</p>
+                    <p class="text-center">{{ answer | judge }}</p>
                     <p><img class="img-responsive center-block" :src="imgUrl"/></p>
                 </div>
             </div>
