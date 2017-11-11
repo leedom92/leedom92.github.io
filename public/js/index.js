@@ -79,7 +79,7 @@ Vue.component('el-info', {
                 width="200"
                 trigger="click"
                 :content="item.content">
-                <el-button slot="reference">click me</el-button>
+                <el-button slot="reference">click</el-button>
             </el-popover>
           </p>
         </div>
