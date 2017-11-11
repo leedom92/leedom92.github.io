@@ -1,11 +1,11 @@
 //nav 组件
-Vue.component('el-nav',{
+Vue.component('el-nav', {
     data: function () {
         return {
-            
+
         }
     },
-    methods:{
+    methods: {
 
     },
     template: `<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -38,7 +38,7 @@ Vue.component('el-nav',{
             </nav>`
 })
 
-Vue.component('el-header',{
+Vue.component('el-header', {
     template: `<header>
                 <div class="contain">
                     <div class="avatar">
@@ -50,14 +50,14 @@ Vue.component('el-header',{
                     </div>
                 </div>
             </header>`,
-    data: function(){
+    data: function () {
         return {
-            avatar:'public/img/avatar3.jpg',
+            avatar: 'public/img/avatar3.jpg',
             name: 'leedom',
             info: "My Chinese name is 蒋利栋. I'm an enthusiastic man who likes sports and literature."
         }
     },
-    created:function(){
+    created: function () {
         this.$message({
             showClose: true,
             message: "welcome to leedom's zone",
@@ -66,7 +66,7 @@ Vue.component('el-header',{
     }
 })
 
-Vue.component('el-info',{
+Vue.component('el-info', {
     template: `<div class="container">
     <div class="row text-center">
         <div class="col-xs-4 img_box" v-for="item in getInfo">
@@ -75,61 +75,74 @@ Vue.component('el-info',{
         </div>
     </div>
 </div>`,
-    data: function(){
+    data: function () {
         return {
-            getInfo:[
-                {
+            getInfo: [{
                     popWay: 'popoverAngular',
                     getImg: 'public/img/angular.jpg',
                     getName: 'angularjs',
-                    content:"AngularJS是为了克服HTML在构建应用上的不足而设计的。"
+                    content: "AngularJS是为了克服HTML在构建应用上的不足而设计的。"
                 },
                 {
                     popWay: 'popoverVue',
                     getImg: 'public/img/vue.jpg',
                     getName: 'vue.js',
-                    content:"Vue.js是一个构建数据驱动的 web 界面的渐进式框架。"
+                    content: "Vue.js是一个构建数据驱动的 web 界面的渐进式框架。"
                 },
                 {
                     popWay: 'popoverJquery',
                     getImg: 'public/img/jquery.jpg',
                     getName: 'jquery',
-                    content:"jQuery是一个快速、简洁的JavaScript框架，是一个优秀的JavaScript代码库。"
+                    content: "jQuery是一个快速、简洁的JavaScript框架，是一个优秀的JavaScript代码库。"
                 }
             ]
         }
     },
-    methods:{
-        
+    methods: {
+
     },
-    created:function(){
+    created: function () {
         $('[data-toggle="popover"]').popover();
         // document.getElementsByClassName('info-btn').popover();
     }
 })
 
-Vue.component('el-time',{
-    data: function(){
+Vue.component('el-time', {
+    data: function () {
         return {
             getTime: new Date().toLocaleDateString(),
             nowTime: new Date().toLocaleTimeString(),
         }
     },
-    methods:{
-        
+    methods: {
+
     },
-    template:`<div class="text-center">
+    template: `<div class="text-center">
             <h1 style="padding-top:10rem;">
                     {{ getTime }}
             </h1>
             <h2> {{ nowTime | timeFunc }} </h2>
+            <el-popover
+            ref="popover4"
+            placement="right"
+            width="400"
+            trigger="click">
+            <el-table :data="gridData">
+              <el-table-column width="150" property="date" label="日期"></el-table-column>
+              <el-table-column width="100" property="name" label="姓名"></el-table-column>
+              <el-table-column width="300" property="address" label="地址"></el-table-column>
+            </el-table>
+          </el-popover>
+          
+          <el-button v-popover:popover4>click 激活</el-button>
+          
             </div>
             `,
-    created:function(){
+    created: function () {
         var that = this;
-        setInterval(function(){
+        setInterval(function () {
             that.nowTime = new Date().toLocaleTimeString()
-        },1000);
+        }, 1000);
         that.$message({
             showClose: true,
             message: "show the time",
@@ -142,24 +155,24 @@ Vue.component('el-time',{
         // axios.get('http://v.wx91go.com/index.php?g=Api&m=Hotel&a=index').then(function(res){
         //     console.log(res);
         //     that.getImg = res.data.banner_list;
-            
+
         // })
     }
 })
 
-Vue.component('el-entertainment',{
-    data: function(){
+Vue.component('el-entertainment', {
+    data: function () {
         return {
             entertainMsg: [],
             url: 'http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=top&count=',
             nowCount: 5,
-            switchShow:false,
+            switchShow: false,
         }
     },
-    methods:{
+    methods: {
         moreFn: function (itemIndex) {
             var that = this;
-            axios.get(this.url+this.nowCount).then(function(res){
+            axios.get(this.url + this.nowCount).then(function (res) {
                 console.log(res);
                 // that.$message({
                 //     showClose: true,
@@ -168,13 +181,13 @@ Vue.component('el-entertainment',{
                 // })
                 var info = res.data;
                 that.entertainMsg = info;
-                that.switchShow=!that.switchShow;
+                that.switchShow = !that.switchShow;
             })
-            
+
         },
         getMore: function () {
-            this.switchShow=!this.switchShow;
-            this.nowCount = this.nowCount+5;
+            this.switchShow = !this.switchShow;
+            this.nowCount = this.nowCount + 5;
             this.moreFn(this.nowCount);
         },
         init: function () {
@@ -186,7 +199,7 @@ Vue.component('el-entertainment',{
             })
         }
     },
-    template:`
+    template: `
     <div class="mediaBox">
         <div class="row rowStyle">
             <div class="col-md-8 col-md-offset-2">
@@ -209,7 +222,7 @@ Vue.component('el-entertainment',{
         </div>
     </div>
             `,
-    created:function(){
+    created: function () {
         // var that = this;
         // axios.get(this.url+this.nowCount).then(function(res){
         //     console.log(res);
@@ -224,28 +237,27 @@ Vue.component('el-entertainment',{
 
         this.init();
 
-        
+
     }
 })
 
-Vue.component('el-experience',{
-    data:function(){
+Vue.component('el-experience', {
+    data: function () {
         return {
             imgUrl: '',
             question: '',
             answer: '请问问题'
         }
     },
-    methods:{
-        getAnswer: 
-            function () {
-                if (this.question.indexOf('?') === -1 && this.question.indexOf('？') === -1) {
-                    this.answer = '问题通常都有一个标点符号 :-)'
-                    return
-                }
-                this.answer = '思考中...'
-                var vm = this
-                axios.get('https://yesno.wtf/api')
+    methods: {
+        getAnswer: function () {
+            if (this.question.indexOf('?') === -1 && this.question.indexOf('？') === -1) {
+                this.answer = '问题通常都有一个标点符号 :-)'
+                return
+            }
+            this.answer = '思考中...'
+            var vm = this
+            axios.get('https://yesno.wtf/api')
                 .then(function (response) {
                     console.log(response)
                     // vm.answer = _.capitalize(response.data.answer);
@@ -255,22 +267,22 @@ Vue.component('el-experience',{
                 .catch(function (error) {
                     vm.answer = '错误! 无法使用该API. ' + error
                 })
-            }
+        }
     },
     watch: {
-        question : function(newQuestion){
+        question: function (newQuestion) {
             this.answer = '直到停止输入，开始回答问题...'
             this.getAnswer()
         }
     },
-    created:function(){
-            this.$message({
-                showClose: true,
-                message: "please ask a question",
-                type: 'warning'
-            })
+    created: function () {
+        this.$message({
+            showClose: true,
+            message: "please ask a question",
+            type: 'warning'
+        })
     },
-    template:`
+    template: `
         <div class="" style="margin-top:10rem;">
             <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
                 <div class="info-box">
@@ -287,58 +299,57 @@ Vue.component('el-experience',{
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
 const Home = {
-     template: `<div>
+    template: `<div>
                     <el-header></el-header>
                     <el-info></el-info>
                 </div>`,
-     }
-    
-const About = { 
-     template: `<div>
+}
+
+const About = {
+    template: `<div>
                     <el-time></el-time> 
-                </div>` 
-    
-    }
-    
-const Entertainment = { 
-     template: `<div>
+                </div>`
+
+}
+
+const Entertainment = {
+    template: `<div>
                     <el-entertainment></el-entertainment>
-                </div>` 
-    
-    }
-    
-const Experience = { 
-     template: `<div>
+                </div>`
+
+}
+
+const Experience = {
+    template: `<div>
                     <el-experience></el-experience>
-                </div>` 
-    
-    }
+                </div>`
+
+}
 
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
 // 通过 Vue.extend() 创建的组件构造器，
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
-const routes = [
-    { 
-        path: '/', 
+const routes = [{
+        path: '/',
         component: Home
     },
-    { 
-        path: '/home', 
+    {
+        path: '/home',
         component: Home
     },
-    { 
-        path: '/about', 
-        component: About 
+    {
+        path: '/about',
+        component: About
     },
-    { 
-        path: '/entertainment', 
-        component: Entertainment 
+    {
+        path: '/entertainment',
+        component: Entertainment
     },
-    { 
-        path: '/experience', 
-        component: Experience 
+    {
+        path: '/experience',
+        component: Experience
     }
 ]
 
@@ -353,9 +364,8 @@ const router = new VueRouter({
 // 从而让整个应用都有路由功能
 const leedom = new Vue({
     el: '#leedom',
-    data:{
+    data: {
         message: 'be the one'
     },
     router
 })
-
