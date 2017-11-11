@@ -127,6 +127,9 @@ Vue.component('el-time', {
             placement="right"
             width="400"
             trigger="click">
+            <el-table>
+              
+            </el-table>
           </el-popover>
           
           <el-button v-popover:popover4>click 激活</el-button>
