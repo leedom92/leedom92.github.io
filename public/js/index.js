@@ -72,6 +72,16 @@ Vue.component('el-info', {
         <div class="col-xs-4 img_box" v-for="item in getInfo">
             <img :src="item.getImg" class="center-block img-responsive" alt="">
             <p>{{ item.getName }}</p>
+            <p>
+            <el-popover
+                placement="bottom"
+                :title="item.getName"
+                width="200"
+                trigger="click"
+                :content="item.content">
+                <el-button slot="reference">click me</el-button>
+            </el-popover>
+          </p>
         </div>
     </div>
 </div>`,
@@ -122,18 +132,6 @@ Vue.component('el-time', {
                     {{ getTime }}
             </h1>
             <h2> {{ nowTime | timeFunc }} </h2>
-            <el-popover
-            ref="popover4"
-            placement="right"
-            width="400"
-            trigger="click">
-            <el-table>
-              
-            </el-table>
-          </el-popover>
-          
-          <el-button v-popover:popover4>click 激活</el-button>
-          
             </div>
             `,
     created: function () {
