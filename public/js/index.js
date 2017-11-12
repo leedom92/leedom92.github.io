@@ -26,7 +26,7 @@ Vue.component('el-nav', {
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">more</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">connection</a></li>
+                                    <li router-link to="/secret">secret</li>
                                     <li><router-link to="/experience">experience</router-link></li>
                                     <li class="divider"></li>
                                     <li><router-link to="/entertainment">entertainment</router-link></li>
@@ -292,6 +292,48 @@ Vue.component('el-experience', {
     `
 })
 
+Vue.component('el-secret', {
+    data: function () {
+        return {
+            answer: '',
+            feedBack: '',
+            girlUrl: ''
+        }
+    },
+    methods: function () {
+
+    },
+    created: function () {
+        this.$message({
+            showClose: true,
+            message: "please guess",
+            type: 'success'
+        })
+    },
+    watch:function(){
+        answer:function(val){
+            if(val == 'Siyeliu'){
+                this.feedBack = 'yes'
+                this.girlUrl = 'public/img/siyeliu.jpg'
+            }else{
+                this.feedBack = 'no'
+            }
+        }
+    },
+    template: `
+    <div class="" style="margin-top:10rem;">
+        <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+            <div class="info-box">
+                <h2 class="text-center">my girlfriend's name is:</h2>
+                <p><input class="form-control" v-model="answer"></input></p>
+                <p class="text-center">{{ feedBack }}</p>
+                <p><img class="img-responsive center-block" :src="girlUrl"/></p>
+            </div>
+        </div>
+    </div>
+    `
+})
+
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
 const Home = {
@@ -322,6 +364,13 @@ const Experience = {
 
 }
 
+const Secret = {
+    template: `<div>
+                    <el-secret></el-secret>
+                </div>`
+
+}
+
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
 // 通过 Vue.extend() 创建的组件构造器，
@@ -346,6 +395,10 @@ const routes = [{
     {
         path: '/experience',
         component: Experience
+    },
+    {
+        path: '/secret',
+        component: Secret
     }
 ]
 
