@@ -317,6 +317,7 @@ Vue.component('el-secret', {
                 this.girlUrl = 'public/img/siyeliu.jpg'
             }else{
                 this.feedBack = 'no'
+                this.girlUrl = ''
             }
         }
     },
