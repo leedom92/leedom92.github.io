@@ -26,7 +26,7 @@ Vue.component('el-nav', {
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">more</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li router-link to="/secret">secret</li>
+                                    <li><router-link to="/secret">secret</router-link></li>
                                     <li><router-link to="/experience">experience</router-link></li>
                                     <li class="divider"></li>
                                     <li><router-link to="/entertainment">entertainment</router-link></li>
