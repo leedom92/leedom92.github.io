@@ -315,6 +315,9 @@ Vue.component('el-secret', {
             if(val == 'Siyeliu'){
                 this.feedBack = 'yes'
                 this.girlUrl = 'public/img/siyeliu.jpg'
+            }else if(val == ''){
+                this.feedBack = 'please give a name'
+                this.girlUrl = ''
             }else{
                 this.feedBack = 'no'
                 this.girlUrl = ''
