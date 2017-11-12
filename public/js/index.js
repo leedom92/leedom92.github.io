@@ -310,7 +310,7 @@ Vue.component('el-secret', {
             type: 'success'
         })
     },
-    watch:function(){
+    watch:{
         answer:function(val){
             if(val == 'Siyeliu'){
                 this.feedBack = 'yes'
