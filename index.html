@@ -34,6 +34,30 @@
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        .siye-enter-active, .siye-leave-active {
+            transition: all 1s ease;
+            transform:rotate(0deg) scale(1)
+        }
+        .siye-enter, .siye-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+            opacity: 0;
+            transform:rotate(-180deg) scale(.5)
+        }
+
+        
+        .entertainment-enter-active, .entertainment-leave-active {
+            transition: all 1s ease;
+            transform: translate(0,0)
+        }
+        .entertainment-enter, .entertainment-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+            opacity: 0;
+            transform: translate(10rem,0)
+        }
+
+
+    </style>
+
 </head>
 <body>
     <div id="leedom">

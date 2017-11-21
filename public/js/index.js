@@ -200,15 +200,15 @@ Vue.component('el-entertainment', {
         <div class="row rowStyle">
             <div class="col-md-8 col-md-offset-2">
                 <div class="media" v-for="(item,index) in entertainMsg" :key="index">
-                    <div class="media-left">
-                        <a href="javascript:;">
-                            <img :src="item.thumbnail_pic_s" :alt="item.title" class="media-object">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4>{{item.author_name}}</h4>
-                        <p>{{item.title}}</p>
-                    </div>
+                        <div class="media-left">
+                            <a href="javascript:;">
+                                <img :src="item.thumbnail_pic_s" :alt="item.title" class="media-object">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4>{{item.author_name}}</h4>
+                            <p>{{item.title}}</p>
+                        </div>
                 </div>
             </div>
             <div class="col-xs-12">
@@ -297,7 +297,8 @@ Vue.component('el-secret', {
         return {
             answer: '',
             feedBack: '',
-            girlUrl: ''
+            girlUrl: '',
+            isGirl: false
         }
     },
     methods: function () {
@@ -331,7 +332,9 @@ Vue.component('el-secret', {
                 <h2 class="text-center">my girlfriend's name is:</h2>
                 <p><input class="form-control" v-model="answer"></input></p>
                 <p class="text-center">{{ feedBack }}</p>
-                <p><img class="img-responsive center-block" :src="girlUrl"/></p>
+                <transition name="siye">
+                    <p v-if="girlUrl != ''"><img class="img-responsive center-block" :src="girlUrl"/></p>
+                </transition>
             </div>
         </div>
     </div>
