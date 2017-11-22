@@ -301,8 +301,25 @@ Vue.component('el-secret', {
             isGirl: false
         }
     },
-    methods: function () {
-
+    methods: {
+        beforeEnter: function (el) {
+            el.style.opacity = 0
+            el.style.transformOrigin = 'left'
+        },
+        enter: function (el, done) {
+            Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 300 })
+            Velocity(el, { fontSize: '1em' }, { complete: done })
+        },
+        leave: function (el, done) {
+            Velocity(el, { translateX: '15px', rotateZ: '50deg' }, { duration: 600 })
+            Velocity(el, { rotateZ: '100deg' }, { loop: 2 })
+            Velocity(el, {
+                rotateZ: '45deg',
+                translateY: '30px',
+                translateX: '30px',
+                opacity: 0
+            }, { complete: done })
+        }
     },
     created: function () {
         this.$message({
@@ -332,13 +349,31 @@ Vue.component('el-secret', {
                 <h2 class="text-center">my girlfriend's name is:</h2>
                 <p><input class="form-control" v-model="answer"></input></p>
                 <p class="text-center">{{ feedBack }}</p>
-                <transition name="siye">
+                <transition 
+                    v-on:before-enter="beforeEnter"
+                    v-on:enter="enter"
+                    v-on:leave="leave"
+                    v-bind:css="false">
                     <p v-if="girlUrl != ''"><img class="img-responsive center-block" :src="girlUrl"/></p>
                 </transition>
             </div>
         </div>
     </div>
     `
+    // template: `
+    // <div class="" style="margin-top:10rem;">
+    //     <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+    //         <div class="info-box">
+    //             <h2 class="text-center">my girlfriend's name is:</h2>
+    //             <p><input class="form-control" v-model="answer"></input></p>
+    //             <p class="text-center">{{ feedBack }}</p>
+    //             <transition name="siye">
+    //                 <p v-if="girlUrl != ''"><img class="img-responsive center-block" :src="girlUrl"/></p>
+    //             </transition>
+    //         </div>
+    //     </div>
+    // </div>
+    // `
 })
 
 // 1. 定义（路由）组件。
