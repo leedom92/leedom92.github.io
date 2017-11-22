@@ -125,13 +125,13 @@ Vue.component('el-time', {
         }
     },
     methods: {
-
+        timeFunc:function(val){
+            return '北京时间 - ' + val;
+        }
     },
     template: `<div class="text-center">
-            <h1 style="padding-top:10rem;">
-                    {{ getTime }}
-            </h1>
-            <h2> {{ nowTime | timeFunc }} </h2>
+                <h1 style="padding-top:10rem;" v-text="getTime"></h1>
+                <h2 v-text="timeFunc(nowTime)"></h2>
             </div>
             `,
     created: function () {
