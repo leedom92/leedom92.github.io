@@ -193,13 +193,43 @@ Vue.component('el-entertainment', {
                 message: "show the entertainment",
                 type: 'success'
             })
-        }
+        },
+        beforeEnter: function (el) {
+            el.style.opacity = 0
+            el.style.height = 0
+          },
+          enter: function (el, done) {
+            var delay = el.dataset.index * 150
+            setTimeout(function () {
+              Velocity(
+                el,
+                { opacity: 1, height: '6.4rem' },
+                { complete: done }
+              )
+            }, delay)
+          },
+          leave: function (el, done) {
+            var delay = el.dataset.index * 150
+            setTimeout(function () {
+              Velocity(
+                el,
+                { opacity: 0, height: 0 },
+                { complete: done }
+              )
+            }, delay)
+          }
     },
     template: `
     <div class="mediaBox">
         <div class="row rowStyle">
             <div class="col-md-8 col-md-offset-2">
-                <div class="media" v-for="(item,index) in entertainMsg" :key="index">
+                <transition-group
+                    name="staggered-fade"
+                    :css="false"
+                    @before-enter="beforeEnter"
+                    @enter="enter"
+                    @leave="leave">
+                    <div class="media" v-for="(item,index) in entertainMsg" :key="index">
                         <div class="media-left">
                             <a href="javascript:;">
                                 <img :src="item.thumbnail_pic_s" :alt="item.title" class="media-object">
@@ -209,7 +239,8 @@ Vue.component('el-entertainment', {
                             <h4>{{item.author_name}}</h4>
                             <p>{{item.title}}</p>
                         </div>
-                </div>
+                    </div>
+                </transition-group>
             </div>
             <div class="col-xs-12">
                 <p class="get-more" v-on:click="getMore()" v-show="switchShow">点击加载更多</p>
