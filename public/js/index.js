@@ -354,7 +354,7 @@ Vue.component('el-secret', {
                     v-on:enter="enter"
                     v-on:leave="leave"
                     v-bind:css="false">
-                    <div class="col-xs-offset-3 col-xs-6" v-if="girlUrl != ''">
+                    <div class="col-xs-offset-2 col-xs-8" v-if="girlUrl != ''">
                         <p><img class="img-responsive center-block" :src="girlUrl"/></p>
                     </div>
                 </transition>
