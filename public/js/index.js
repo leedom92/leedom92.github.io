@@ -377,7 +377,7 @@ Vue.component('el-secret', {
     <div class="" style="margin-top:10rem;">
         <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
             <div class="info-box">
-                <h2 class="text-center">my girlfriend's name is:</h2>
+                <h2 class="text-center">my girl's name is:</h2>
                 <p><input class="form-control" v-model="answer"></input></p>
                 <p class="text-center">{{ feedBack }}</p>
                 <transition 
