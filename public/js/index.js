@@ -44,7 +44,7 @@ Vue.component('el-header', {
     template: `<header>
                 <div class="contain">
                     <div class="avatar">
-                        <img :src="avatar" alt="" class="img-circle">
+                        <img :src="avatar" alt="" class="img-circle" @click="">
                     </div>
                     <div class="desc text-center">
                         <h2 class="h-size">{{ name }}</h2>
@@ -57,6 +57,11 @@ Vue.component('el-header', {
             avatar: 'public/img/avatar3.jpg',
             name: 'leedom',
             info: "My Chinese name is 蒋利栋. I'm an enthusiastic man who likes sports and literature."
+        }
+    },
+    methods:{
+        firstAvatar:function(){
+            this.avatar = 'public/img/avatar3.jpg'
         }
     },
     created: function () {
