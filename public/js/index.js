@@ -1,3 +1,5 @@
+var eventBus = new Vue({})
+
 //nav 组件
 Vue.component('el-nav', {
     data: function () {
@@ -63,6 +65,13 @@ Vue.component('el-header', {
             message: "welcome to leedom's zone",
             type: 'success'
         })
+    },
+    mounted:function(){
+        var _self = this;
+        eventBus.$on('msg',function(res){
+            console.log(res)
+            _self.avatar = res
+        })
     }
 })
 
@@ -79,7 +88,7 @@ Vue.component('el-info', {
                 width="200"
                 trigger="click"
                 :content="item.content">
-                <el-button slot="reference">click</el-button>
+                <el-button slot="reference" @click="changeAvatar">click</el-button>
             </el-popover>
           </p>
         </div>
@@ -109,7 +118,9 @@ Vue.component('el-info', {
         }
     },
     methods: {
-
+        changeAvatar:function(){
+            eventBus.$emit('msg', 'public/img/avatar2.jpg')
+        }
     },
     created: function () {
         $('[data-toggle="popover"]').popover();
