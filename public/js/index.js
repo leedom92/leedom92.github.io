@@ -44,7 +44,7 @@ Vue.component('el-header', {
     template: `<header>
                 <div class="contain">
                     <div class="avatar">
-                        <img :src="avatar" alt="" class="img-circle" @click="">
+                        <img :src="avatar" alt="" class="img-circle" @click="firstAvatar">
                     </div>
                     <div class="desc text-center">
                         <h2 class="h-size">{{ name }}</h2>
