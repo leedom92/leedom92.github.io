@@ -128,8 +128,7 @@ Vue.component('el-info', {
         }
     },
     created: function () {
-        $('[data-toggle="popover"]').popover();
-        // document.getElementsByClassName('info-btn').popover();
+       console.log('I love u,L')
     }
 })
 
