@@ -378,7 +378,7 @@ Vue.component('el-secret', {
         answer:function(val){
             if(val == 'Siyeliu'){
                 this.feedBack = 'yes'
-                this.girlUrl = 'public/img/L.jpg'
+                this.girlUrl = 'public/img/siye.jpg'
             }else if(val == ''){
                 this.feedBack = 'please give a name'
                 this.girlUrl = ''
