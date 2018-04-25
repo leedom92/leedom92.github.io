@@ -379,6 +379,9 @@ Vue.component('el-secret', {
             if(val == 'Siyeliu'){
                 this.feedBack = 'yes'
                 this.girlUrl = 'public/img/siye.jpg'
+            }else if(val == '金安'){
+                this.feedBack = 'yes'
+                this.girlUrl = 'public/img/al.gif'
             }else if(val == ''){
                 this.feedBack = 'please give a name'
                 this.girlUrl = ''
