@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title>404</title>
   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
   <style>
@@ -11,17 +13,33 @@
       margin: 0;
       padding: 0;
     }
-    body{
+
+    :root {
+      --dark-color: #fff;
+      --dark-bg: #373737;
+    }
+
+    body {
       font-family: 'DotGothic16', sans-serif, monospace;
       font-size: calc(60px + 0.33vw);
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #121314;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: var(--dark-color, #121314);
+        background-color: var(--dark-bg, #fff);
+      }
     }
   </style>
 </head>
+
 <body>
   <h2>404</h2>
 </body>
+
 </html>
